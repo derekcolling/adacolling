@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Ada's Dance Competition Schedule Tracker" />
+  <title>Ada's Dance Tracker | 24Seven Tulsa</title>
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💃</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Quicksand:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <div class="tracker-container">
+    <!-- Header -->
+    <header class="tracker-header">
+      <a href="/" class="back-link">← Back Home</a>
+      <h1 class="tracker-title">
+        <span class="title-emoji">💃</span>
+        Ada's Dance Tracker
+        <span class="title-emoji">🩰</span>
+      </h1>
+      <p class="event-info">24Seven Dance Convention - Tulsa, OK</p>
+      <p class="event-date">January 30 - February 1, 2026</p>
+    </header>
+
+    <!-- Current Dance Input -->
+    <section class="current-dance-section">
+      <div class="current-dance-card">
+        <label for="currentDance" class="current-label">What dance number are they on now?</label>
+        <div class="current-input-group">
+          <button class="adjust-btn minus" id="decreaseBtn">−</button>
+          <input type="number" id="currentDance" min="1" max="325" value="1" class="current-input" />
+          <button class="adjust-btn plus" id="increaseBtn">+</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Status Display -->
+    <section class="status-section">
+      <div class="status-card" id="statusCard">
+        <div class="status-icon" id="statusIcon">🎯</div>
+        <div class="status-message" id="statusMessage">Select Ada's dances below to track them!</div>
+        <div class="next-dance-info" id="nextDanceInfo"></div>
+      </div>
+    </section>
+
+    <!-- Quick Stats -->
+    <section class="stats-section">
+      <div class="stat-card">
+        <div class="stat-number" id="totalSelected">0</div>
+        <div class="stat-label">Ada's Dances</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number" id="remainingDances">0</div>
+        <div class="stat-label">Remaining</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number" id="completedDances">0</div>
+        <div class="stat-label">Completed</div>
+      </div>
+    </section>
+
+    <!-- Ada's Upcoming Dances -->
+    <section class="upcoming-section" id="upcomingSection">
+      <h2 class="section-title">Ada's Upcoming Dances</h2>
+      <div class="upcoming-list" id="upcomingList">
+        <!-- Populated by JS -->
+      </div>
+    </section>
+
+    <!-- Day Filter -->
+    <section class="filter-section">
+      <h2 class="section-title">Full Schedule</h2>
+      <div class="filter-buttons">
+        <button class="filter-btn active" data-day="all">All Days</button>
+        <button class="filter-btn" data-day="friday">Friday</button>
+        <button class="filter-btn" data-day="saturday">Saturday</button>
+      </div>
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search by name, studio, or number..." class="search-input" />
+      </div>
+    </section>
+
+    <!-- Schedule List -->
+    <section class="schedule-section">
+      <div class="schedule-list" id="scheduleList">
+        <!-- Populated by JS -->
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="tracker-footer">
+      <p>Made with 💖 for Ada</p>
+      <p class="footer-note">Tap any dance to add/remove from Ada's list</p>
+    </footer>
+  </div>
+
+  <script type="module" src="/src/dance-tracker.js"></script>
+</body>
+
+</html>
